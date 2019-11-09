@@ -1,3 +1,10 @@
+This is my 7th Techdegree project! This project helped me understand React and React-Router-4 better by helping me practice the concepts 
+I learned at Treehouse. The app is designed so that when the user types in a search box and submits a word or phrase, the app fetches
+data from the Flicker API and displays it to the page with images related to the search term(s). 
+
+
+
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
