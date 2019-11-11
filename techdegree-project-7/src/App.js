@@ -41,13 +41,14 @@ class App extends Component {
   render () {
       return (
         <BrowserRouter>
-          <div className="App">
+          <div className="container">
               <Route path={'/'} render={() => <Header onSearch={this.onSearch.bind(this)}/> } />
               <Switch>
                 <Route exact path="/" render={ () => <Redirect to="/cats" />} />
                 <Route exact path="/cats" render={ () => <Photo data={this.state.photos}/> } />
                 <Route exact path="/dogs" render={ () => <Photo data={this.state.photos}/> } />
                 <Route exact path="/birds" render={ () => <Photo data={this.state.photos}/> } />
+                <Route path="/search/:searchTerm" render={ () => <Photo data={this.state.photos}/> } />
                 <Route component={NotFound} />
               </Switch>
           </div>

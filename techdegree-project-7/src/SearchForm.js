@@ -1,5 +1,8 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
+import { 
+    Link,
+    withRouter
+} from 'react-router-dom';
 
 class SearchForm extends Component {
 
@@ -8,7 +11,12 @@ class SearchForm extends Component {
     }
 
     onSubmit(e) {
+        if (this.state.input === '') {
+            e.preventDefault();
+            return false;
+        }
         e.preventDefault();
+        this.props.history.push(`/search/${this.state.input}`);
         this.props.onSearch(this.state.input);
         e.currentTarget.reset();
     }
@@ -21,10 +29,10 @@ class SearchForm extends Component {
                         input: e.target.value
                     })
                 }} />
-                <button type="submit"><Link type="submit" to={`/${this.state.input}`}/></button>
+                <button type="submit"><i className="fa fa-search"></i></button>
             </form>
         );
     };
 }
 
-export default SearchForm;
+export default withRouter(SearchForm);
